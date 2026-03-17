@@ -72,7 +72,9 @@ includeFile("groups/corellian_corvette/r2droid_loot.lua")
 
 -- creature sub-folder
 includeFile("groups/creature/brackaset_common.lua")
+includeFile("groups/creature/acklay_boss.lua")
 includeFile("groups/creature/fambaa_common.lua")
+includeFile("groups/creature/fire_spider_boss.lua")
 includeFile("groups/creature/giant_dune_kimo_common.lua")
 includeFile("groups/creature/gurk_king_common.lua")
 includeFile("groups/creature/harrower_bone.lua")
