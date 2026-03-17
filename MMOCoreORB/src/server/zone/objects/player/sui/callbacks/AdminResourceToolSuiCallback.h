@@ -13,7 +13,6 @@
 #include "server/zone/objects/resource/ResourceSpawn.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "system/util/Vector.h"
-#include "system/lang/StringUtil.h"
 
 // State constants for multi-step UI
 #define STATE_SELECT_PLANET 1
