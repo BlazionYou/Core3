@@ -293,6 +293,7 @@
 #include "server/zone/objects/creature/commands/GmForceCommandCommand.h"
 #include "server/zone/objects/creature/commands/GmCreateClassResourceCommand.h"
 #include "server/zone/objects/creature/commands/GmCreateSpecificResourceCommand.h"
+#include "server/zone/objects/creature/commands/AdminResourceToolCommand.h"
 #include "server/zone/objects/creature/commands/GmForceRankCommand.h"
 #include "server/zone/objects/creature/commands/GmFsVillageCommand.h"
 #include "server/zone/objects/creature/commands/GmJediStateCommand.h"
@@ -696,6 +697,7 @@ void CommandConfigManager::registerCommands2() {
 	commandFactory.registerCommand<GmForceCommandCommand>(String("gmForceCommand").toLowerCase());
 	commandFactory.registerCommand<GmCreateClassResourceCommand>(String("gmCreateClassResource").toLowerCase());
 	commandFactory.registerCommand<GmCreateSpecificResourceCommand>(String("gmCreateSpecificResource").toLowerCase());
+	commandFactory.registerCommand<AdminResourceToolCommand>(String("adminresources").toLowerCase());
 	commandFactory.registerCommand<GmForceRankCommand>(String("gmForceRank").toLowerCase());
 	commandFactory.registerCommand<GmFsVillageCommand>(String("gmFsVillage").toLowerCase());
 	commandFactory.registerCommand<GmJediStateCommand>(String("gmJediState").toLowerCase());

@@ -19,6 +19,7 @@
 #include "AddMapLocationCommand.h"
 #include "AddPowerCommand.h"
 #include "AdminCommand.h"
+#include "AdminResourceToolCommand.h"
 #include "AdjustLotCountCommand.h"
 #include "AiIgnoreCommand.h"
 #include "AimCommand.h"

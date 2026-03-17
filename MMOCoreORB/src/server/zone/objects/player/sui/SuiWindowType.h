@@ -133,6 +133,7 @@ public:
 		ADMIN_LIST                     	   = 185,
 		ADMIN_FIND_PLAYER                  = 186,
 		ADMIN_FRSLIST                  	   = 187,
+		ADMIN_RESOURCE_TOOL               = 188,
 
 		//Teach 221 - 230
 		TEACH_SKILL                        = 221,
