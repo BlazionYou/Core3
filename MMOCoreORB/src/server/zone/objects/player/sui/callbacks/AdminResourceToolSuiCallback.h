@@ -23,7 +23,7 @@ private:
 	void showResourcesForPlanet(CreatureObject* creature, ZoneServer* zoneServer, const String& planet) const;
 	void showResourceDetails(CreatureObject* creature, ZoneServer* zoneServer, const String& resourceName) const;
 	void showResourceHistory(CreatureObject* creature, ZoneServer* zoneServer) const;
-	void showSpawnHelp(CreatureObject* creature) const;
+	void showSpawnHelp(CreatureObject* creature, ZoneServer* zoneServer) const;
 	void showSpawnEnhancedMenu(CreatureObject* creature, ZoneServer* zoneServer) const;
 	void showGiveResourceMenu(CreatureObject* creature, ZoneServer* zoneServer) const;
 	void promptDespawnResource(CreatureObject* creature, ZoneServer* zoneServer) const;

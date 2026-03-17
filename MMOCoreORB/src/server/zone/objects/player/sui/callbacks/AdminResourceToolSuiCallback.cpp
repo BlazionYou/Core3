@@ -5,7 +5,6 @@
 #include "AdminResourceToolSuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
-#include "server/zone/objects/player/sui/callbacks/AdminResourceToolSuiCallback.h"
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -35,7 +34,7 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 		return;
 
 	String selection = listBox->getMenuItemName(index);
-	ZoneServer* zoneServer = server->getZoneServer();
+	ZoneServer* zoneServer = server;
 
 	// Handle main menu selections
 	if (selection.contains("Planet:")) {
@@ -44,7 +43,7 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 	} else if (selection == "View Resource History") {
 		showResourceHistory(creature, zoneServer);
 	} else if (selection == "Spawn New Resource") {
-		showSpawnHelp(creature);
+		showSpawnHelp(creature, zoneServer);
 	} else if (selection == "Spawn Enhanced Resource") {
 		showSpawnEnhancedMenu(creature, zoneServer);
 	} else if (selection == "Give Resource to Player") {
@@ -58,15 +57,12 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 		String resourceName = selection.subString(0, selection.indexOf(" - "));
 		showResourceDetails(creature, zoneServer, resourceName);
 	} else if (selection == "View Details" || selection == "Details") {
-		// Get first selected item from list and show details
-		if (listBox->getSelectedItemsSize() > 0) {
-			int selectedIndex = listBox->getSelectedItemIndex();
-			if (selectedIndex >= 0 && selectedIndex < listBox->getMenuItemsSize()) {
-				String item = listBox->getMenuItemName(selectedIndex);
-				if (item.contains(" - ")) {
-					String resourceName = item.subString(0, item.indexOf(" - "));
-					showResourceDetails(creature, zoneServer, resourceName);
-				}
+		// Get first selected item - use the index from args
+		if (index >= 0 && index < listBox->getMenuItemsVectorSize()) {
+			String item = listBox->getMenuItemName(index);
+			if (item.contains(" - ")) {
+				String resourceName = item.subString(0, item.indexOf(" - "));
+				showResourceDetails(creature, zoneServer, resourceName);
 			}
 		}
 	} else if (selection.contains("Tatooine") || selection.contains("Corellia") || 
@@ -77,13 +73,13 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 		// Planet selection from the planet list
 		showResourcesForPlanet(creature, zoneServer, selection);
 	} else if (selection.contains("Use /gmCreateSpecificResource")) {
-		showSpawnHelp(creature);
+		showSpawnHelp(creature, zoneServer);
 	} else if (selection.contains("Use /gmCreateClassResource")) {
-		showSpawnHelp(creature);
+		showSpawnHelp(creature, zoneServer);
 	} else if (selection.contains("Use Character Builder")) {
 		creature->sendSystemMessage("Open Character Builder (Ctrl+Shift+B) and search for 'Resource Container'");
 	} else if (selection.contains("Spawn resources for players")) {
-		showSpawnHelp(creature);
+		showSpawnHelp(creature, zoneServer);
 	} else if (selection == "Back to Main Menu" || selection == "Back") {
 		showMainMenu(creature, zoneServer);
 	} else if (selection == "OK" || selection == "Close") {
@@ -275,7 +271,7 @@ void AdminResourceToolSuiCallback::showResourceHistory(CreatureObject* creature,
 	creature->sendMessage(sui->generateMessage());
 }
 
-void AdminResourceToolSuiCallback::showSpawnHelp(CreatureObject* creature) const {
+void AdminResourceToolSuiCallback::showSpawnHelp(CreatureObject* creature, ZoneServer* zoneServer) const {
 	ManagedReference<SuiListBox*> sui = new SuiListBox(creature, SuiWindowType::ADMIN_RESOURCE_TOOL, SuiListBox::HANDLETWOBUTTON);
 	sui->setPromptTitle("Spawn Resource");
 	sui->setPromptText("Resource Spawning Options:\n\n"
@@ -289,7 +285,7 @@ void AdminResourceToolSuiCallback::showSpawnHelp(CreatureObject* creature) const
 	sui->addMenuItem("Use /gmCreateClassResource command");
 	sui->addMenuItem("Back to Main Menu");
 
-	sui->setCallback(new AdminResourceToolSuiCallback(server->getZoneServer()));
+	sui->setCallback(new AdminResourceToolSuiCallback(zoneServer));
 	sui->setOkButton(true, "OK");
 	sui->setCancelButton(true, "Back");
 
