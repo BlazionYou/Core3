@@ -36,10 +36,19 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 	String selection = listBox->getMenuItemName(index);
 	ZoneServer* zoneServer = server;
 
-	// Handle main menu selections
+	// Handle main menu selections - extract lowercase planet name from "Planet: Name (lowercase)"
 	if (selection.contains("Planet:")) {
-		String planet = selection.replaceFirst("Planet: ", "");
-		showResourcesForPlanet(creature, zoneServer, planet);
+		// Extract the lowercase name from "Planet: Tatooine (tatooine)"
+		int parenStart = selection.lastIndexOf("(");
+		int parenEnd = selection.lastIndexOf(")");
+		if (parenStart > 0 && parenEnd > parenStart) {
+			String planet = selection.subString(parenStart + 1, parenEnd);
+			showResourcesForPlanet(creature, zoneServer, planet);
+		} else {
+			// Fallback: just use what comes after "Planet: "
+			String planet = selection.replaceFirst("Planet: ", "");
+			showResourcesForPlanet(creature, zoneServer, planet);
+		}
 	} else if (selection == "View Resource History") {
 		showResourceHistory(creature, zoneServer);
 	} else if (selection == "Spawn New Resource") {
@@ -65,13 +74,14 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 				showResourceDetails(creature, zoneServer, resourceName);
 			}
 		}
-	} else if (selection.contains("Tatooine") || selection.contains("Corellia") || 
-			   selection.contains("Naboo") || selection.contains("Dantooine") ||
-			   selection.contains("Dathomir") || selection.contains("Endor") ||
-			   selection.contains("Rori") || selection.contains("Talus") ||
-			   selection.contains("Lok") || selection.contains("Yavin4")) {
-		// Planet selection from the planet list
-		showResourcesForPlanet(creature, zoneServer, selection);
+	} else if (selection.contains("(") && selection.contains(")")) {
+		// Planet selection from the planet list - extract lowercase name from "Tatooine (tatooine)"
+		int parenStart = selection.lastIndexOf("(");
+		int parenEnd = selection.lastIndexOf(")");
+		if (parenStart > 0 && parenEnd > parenStart) {
+			String planet = selection.subString(parenStart + 1, parenEnd);
+			showResourcesForPlanet(creature, zoneServer, planet);
+		}
 	} else if (selection.contains("Use /gmCreateSpecificResource")) {
 		showSpawnHelp(creature, zoneServer);
 	} else if (selection.contains("Use /gmCreateClassResource")) {
@@ -101,18 +111,18 @@ void AdminResourceToolSuiCallback::showMainMenu(CreatureObject* creature, ZoneSe
 		"Use /adminresources give to give resources to players.\n"
 		"Use /adminresources despawn:<resourcename> to despawn a resource.");
 
-	// Add menu items for different sections
+	// Add menu items for different sections (display names capitalized, but internal names lowercase)
 	sui->addMenuItem("=== VIEW RESOURCES ===");
-	sui->addMenuItem("Planet: Tatooine");
-	sui->addMenuItem("Planet: Corellia");
-	sui->addMenuItem("Planet: Naboo");
-	sui->addMenuItem("Planet: Dantooine");
-	sui->addMenuItem("Planet: Dathomir");
-	sui->addMenuItem("Planet: Endor");
-	sui->addMenuItem("Planet: Rori");
-	sui->addMenuItem("Planet: Talus");
-	sui->addMenuItem("Planet: Lok");
-	sui->addMenuItem("Planet: Yavin4");
+	sui->addMenuItem("Planet: Tatooine (tatooine)");
+	sui->addMenuItem("Planet: Corellia (corellia)");
+	sui->addMenuItem("Planet: Naboo (naboo)");
+	sui->addMenuItem("Planet: Dantooine (dantooine)");
+	sui->addMenuItem("Planet: Dathomir (dathomir)");
+	sui->addMenuItem("Planet: Endor (endor)");
+	sui->addMenuItem("Planet: Rori (rori)");
+	sui->addMenuItem("Planet: Talus (talus)");
+	sui->addMenuItem("Planet: Lok (lok)");
+	sui->addMenuItem("Planet: Yavin4 (yavin4)");
 	sui->addMenuItem("");
 	sui->addMenuItem("=== TOOLS ===");
 	sui->addMenuItem("View Resource History");

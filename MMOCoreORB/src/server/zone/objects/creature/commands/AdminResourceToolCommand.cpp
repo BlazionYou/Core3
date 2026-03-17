@@ -75,18 +75,18 @@ void AdminResourceToolCommand::showMainMenu(CreatureObject* creature, ZoneServer
 		"Use /adminresources give to give resources to players.\n"
 		"Use /adminresources despawn:<resourcename> to despawn a resource.");
 
-	// Add menu items for different sections
+	// Add menu items for different sections (display names capitalized, but internal names lowercase)
 	sui->addMenuItem("=== VIEW RESOURCES ===");
-	sui->addMenuItem("Planet: Tatooine");
-	sui->addMenuItem("Planet: Corellia");
-	sui->addMenuItem("Planet: Naboo");
-	sui->addMenuItem("Planet: Dantooine");
-	sui->addMenuItem("Planet: Dathomir");
-	sui->addMenuItem("Planet: Endor");
-	sui->addMenuItem("Planet: Rori");
-	sui->addMenuItem("Planet: Talus");
-	sui->addMenuItem("Planet: Lok");
-	sui->addMenuItem("Planet: Yavin4");
+	sui->addMenuItem("Planet: Tatooine (tatooine)");
+	sui->addMenuItem("Planet: Corellia (corellia)");
+	sui->addMenuItem("Planet: Naboo (naboo)");
+	sui->addMenuItem("Planet: Dantooine (dantooine)");
+	sui->addMenuItem("Planet: Dathomir (dathomir)");
+	sui->addMenuItem("Planet: Endor (endor)");
+	sui->addMenuItem("Planet: Rori (rori)");
+	sui->addMenuItem("Planet: Talus (talus)");
+	sui->addMenuItem("Planet: Lok (lok)");
+	sui->addMenuItem("Planet: Yavin4 (yavin4)");
 	sui->addMenuItem("");
 	sui->addMenuItem("=== TOOLS ===");
 	sui->addMenuItem("View Resource History");
@@ -114,16 +114,17 @@ void AdminResourceToolCommand::showPlanetSelection(CreatureObject* creature, Zon
 	sui->setPromptTitle("Select Planet");
 	sui->setPromptText("Select a planet to view its resources:");
 
-	sui->addMenuItem("Tatooine");
-	sui->addMenuItem("Corellia");
-	sui->addMenuItem("Naboo");
-	sui->addMenuItem("Dantooine");
-	sui->addMenuItem("Dathomir");
-	sui->addMenuItem("Endor");
-	sui->addMenuItem("Rori");
-	sui->addMenuItem("Talus");
-	sui->addMenuItem("Lok");
-	sui->addMenuItem("Yavin4");
+	// Display names with lowercase internal names
+	sui->addMenuItem("Tatooine (tatooine)");
+	sui->addMenuItem("Corellia (corellia)");
+	sui->addMenuItem("Naboo (naboo)");
+	sui->addMenuItem("Dantooine (dantooine)");
+	sui->addMenuItem("Dathomir (dathomir)");
+	sui->addMenuItem("Endor (endor)");
+	sui->addMenuItem("Rori (rori)");
+	sui->addMenuItem("Talus (talus)");
+	sui->addMenuItem("Lok (lok)");
+	sui->addMenuItem("Yavin4 (yavin4)");
 
 	sui->setCallback(new AdminResourceToolSuiCallback(zoneServer));
 	sui->setOkButton(true, "View");
