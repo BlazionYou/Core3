@@ -153,6 +153,7 @@ includeFile("items/armor/ubese_armor_helmet.lua")
 includeFile("items/armor/ubese_armor_jacket.lua")
 includeFile("items/armor/ubese_armor_pants.lua")
 includeFile("items/armor/ubese_armor_shirt.lua")
+includeFile("items/armor/shield_generator_personal_imperial.lua")
 
 --bestine_election sub-folder
 includeFile("items/bestine_election/bestine_quest_badge.lua")

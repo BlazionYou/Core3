@@ -41,6 +41,7 @@ includeFile("groups/armor/mabari_armor.lua")
 includeFile("groups/armor/padded_armor.lua")
 includeFile("groups/armor/tantel_armor.lua")
 includeFile("groups/armor/ubese_armor.lua")
+includeFile("groups/armor/imperial_psg.lua")
 
 -- bestine election sub-folder
 includeFile("groups/bestine_election/bestine_history_quest_reward.lua")

@@ -81,6 +81,7 @@ armor_all = {
 
 		-- Rare
 		{itemTemplate = "composite_armor_bicep_l", weight = 49264},
+		{itemTemplate = "shield_generator_personal_imperial", weight = 49263},
 		{itemTemplate = "composite_armor_bicep_r", weight = 49264},
 		{itemTemplate = "composite_armor_boots", weight = 49264},
 		{itemTemplate = "composite_armor_bracer_l", weight = 49264},
