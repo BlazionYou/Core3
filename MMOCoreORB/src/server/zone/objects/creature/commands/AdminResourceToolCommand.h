@@ -8,9 +8,7 @@
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/player/sui/SuiWindowType.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
-
-// Forward declaration
-class AdminResourceToolSuiCallback;
+#include "server/zone/objects/player/sui/callbacks/AdminResourceToolSuiCallback.h"
 
 class AdminResourceToolCommand : public QueueCommand {
 public:
