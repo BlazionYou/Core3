@@ -6,9 +6,7 @@ acklay_boss = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "acklay_bones_rare", weight = 7500000},
-		{itemTemplate = "acklay_ris_armor_schematic", weight = 2500000}
-
+		{itemTemplate = "acklay_bones_rare", weight = 10000000}
 	}
 }
 
