@@ -58,7 +58,7 @@ void AdminResourceToolSuiCallback::run(CreatureObject* creature, SuiBox* sui, ui
 		showResourceDetails(creature, zoneServer, resourceName);
 	} else if (selection == "View Details" || selection == "Details") {
 		// Get first selected item - use the index from args
-		if (index >= 0 && index < listBox->getMenuItemsVectorSize()) {
+		if (index >= 0 && index < listBox->getMenuSize()) {
 			String item = listBox->getMenuItemName(index);
 			if (item.contains(" - ")) {
 				String resourceName = item.subString(0, item.indexOf(" - "));
