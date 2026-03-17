@@ -42,7 +42,7 @@
 --true = 1, false = 0
 
 AdminResourceToolCommand = {
-	name = "adminresources"
+	    name = "adminresources",
 }
 
 AddCommand(AdminResourceToolCommand)
