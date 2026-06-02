@@ -1,4 +1,5 @@
 
+includeFile("pet/battle_probot.lua")
 includeFile("pet/angler_be.lua")
 includeFile("pet/bageraset_be.lua")
 includeFile("pet/bantha_be.lua")

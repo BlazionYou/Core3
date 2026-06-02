@@ -14,6 +14,12 @@
 #include "server/zone/objects/tangible/components/droid/DroidPersonalityModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidMaintenanceModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidDataStorageModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidCombatModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidStimpackModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidAutoRepairModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidHarvestModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidArmorModuleDataComponent.h"
+#include "server/zone/objects/tangible/components/droid/DroidItemStorageModuleDataComponent.h"
 #include "server/zone/objects/structure/StructureObject.h"
 #include "server/zone/objects/creature/conversation/ConversationObserver.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
@@ -237,6 +243,64 @@ void DroidObjectImplementation::initDroidModules() {
 					modules.emplace(module);
 				}
 			}
+		}
+	}
+
+	// Built-in modules for battle_probot
+	if (getCreatureTemplate() != nullptr && getCreatureTemplate()->getTemplateName() == "battle_probot") {
+		bool hasCombat = false;
+		bool hasStimpack = false;
+		bool hasAutoRepair = false;
+		bool hasHarvest = false;
+		bool hasArmor = false;
+		bool hasStorage = false;
+
+		for (int i = 0; i < modules.size(); i++) {
+			auto& mod = modules.get(i);
+			if (mod->getModuleName() == "combat_module") hasCombat = true;
+			else if (mod->getModuleName() == "stimpack_module") hasStimpack = true;
+			else if (mod->getModuleName() == "auto_repair_module") hasAutoRepair = true;
+			else if (mod->getModuleName() == "harvest_module") hasHarvest = true;
+			else if (mod->getModuleName() == "armor_module") hasArmor = true;
+			else if (mod->getModuleName() == "item_storage_module") hasStorage = true;
+		}
+
+		if (!hasCombat) {
+			auto combatModule = new DroidCombatModuleDataComponent();
+			combatModule->setSpecies(getSpecies());
+			modules.emplace(combatModule);
+			combatModule->initialize(this);
+		}
+
+		if (!hasStimpack) {
+			auto stimpackModule = new DroidStimpackModuleDataComponent();
+			stimpackModule->capacity = 500;
+			stimpackModule->speed = 5;
+			stimpackModule->rate = 12000;
+			modules.emplace(stimpackModule);
+			stimpackModule->initialize(this);
+		}
+
+		if (!hasAutoRepair) {
+			auto repairModule = new DroidAutoRepairModuleDataComponent();
+			modules.emplace(repairModule);
+		}
+
+		if (!hasHarvest) {
+			auto harvestModule = new DroidHarvestModuleDataComponent();
+			modules.emplace(harvestModule);
+		}
+
+		if (!hasArmor) {
+			auto armorModule = new DroidArmorModuleDataComponent();
+			modules.emplace(armorModule);
+			armorModule->initialize(this);
+		}
+
+		if (!hasStorage) {
+			auto storageModule = new DroidItemStorageModuleDataComponent();
+			modules.emplace(storageModule);
+			storageModule->initialize(this);
 		}
 	}
 }
