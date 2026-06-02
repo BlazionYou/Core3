@@ -3345,6 +3345,13 @@ object_tangible_loot_loot_schematic_shared_geonosian_sonic_blaster_schematic = S
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_geonosian_sonic_blaster_schematic, "object/tangible/loot/loot_schematic/shared_geonosian_sonic_blaster_schematic.iff")
 
+object_tangible_loot_loot_schematic_shared_rifle_t27_schematic = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_geonosian_tenloss_dxr6_schematic.iff"
+	-- Reuses Geonosian DXR6 schematic client IFF (Lua wrapper pattern)
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_loot_schematic_shared_rifle_t27_schematic, "object/tangible/loot/loot_schematic/shared_rifle_t27_schematic.iff")
+
 object_tangible_loot_loot_schematic_shared_geonosian_sword_core_schematic = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/loot/loot_schematic/shared_geonosian_sword_core_schematic.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

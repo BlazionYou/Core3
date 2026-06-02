@@ -3667,6 +3667,13 @@ object_draft_schematic_weapon_shared_rifle_t21 = SharedDraftSchematicObjectTempl
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_rifle_t21, "object/draft_schematic/weapon/shared_rifle_t21.iff")
 
+object_draft_schematic_weapon_shared_rifle_t27 = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/weapon/shared_rifle_t21.iff"
+	-- Reuses T21 client IFF (Lua wrapper pattern)
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_shared_rifle_t27, "object/draft_schematic/weapon/shared_rifle_t27.iff")
+
 object_draft_schematic_weapon_shared_rifle_tangle_gun7 = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/weapon/shared_rifle_tangle_gun7.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

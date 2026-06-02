@@ -41,29 +41,13 @@
 --this exception also makes it possible to release a modified version 
 
 
+object_tangible_loot_loot_schematic_rifle_t27_schematic = object_tangible_loot_loot_schematic_shared_rifle_t27_schematic:new {
+	templateType = LOOTSCHEMATIC,
+	objectMenuComponent = "LootSchematicMenuComponent",
+	attributeListComponent = "LootSchematicAttributeListComponent",
+	requiredSkill = "crafting_weaponsmith_master",
+	targetDraftSchematic = "object/draft_schematic/weapon/rifle_t21.iff",
+	targetUseCount = 1
+}
 
---Children folder includes
-includeFile("weapon/ranged/rifle/base/serverobjects.lua")
-
--- Server Objects
-includeFile("weapon/ranged/rifle/rifle_acid_beam.lua")
-includeFile("weapon/ranged/rifle/rifle_beam.lua")
-includeFile("weapon/ranged/rifle/rifle_berserker.lua")
-includeFile("weapon/ranged/rifle/rifle_bowcaster.lua")
-includeFile("weapon/ranged/rifle/rifle_cdef.lua")
-includeFile("weapon/ranged/rifle/rifle_dlt20.lua")
-includeFile("weapon/ranged/rifle/rifle_dlt20a.lua")
-includeFile("weapon/ranged/rifle/rifle_e11.lua")
-includeFile("weapon/ranged/rifle/rifle_ewok_crossbow.lua")
-includeFile("weapon/ranged/rifle/rifle_flame_thrower.lua")
-includeFile("weapon/ranged/rifle/rifle_jawa_ion.lua")
-includeFile("weapon/ranged/rifle/rifle_laser.lua")
-includeFile("weapon/ranged/rifle/rifle_laser_noob.lua")
-includeFile("weapon/ranged/rifle/rifle_lightning.lua")
-includeFile("weapon/ranged/rifle/rifle_sg82.lua")
-includeFile("weapon/ranged/rifle/rifle_spraystick.lua")
-includeFile("weapon/ranged/rifle/rifle_t21.lua")
-includeFile("weapon/ranged/rifle/rifle_t27.lua")
-includeFile("weapon/ranged/rifle/rifle_tenloss_dxr6_disruptor_loot.lua")
-includeFile("weapon/ranged/rifle/rifle_tusken.lua")
-includeFile("weapon/ranged/rifle/rifle_victor_tusken.lua")
+ObjectTemplates:addTemplate(object_tangible_loot_loot_schematic_rifle_t27_schematic, "object/tangible/loot/loot_schematic/geonosian_sonic_blaster_schematic.iff")

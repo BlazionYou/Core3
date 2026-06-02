@@ -7,8 +7,9 @@ rancor_boss = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "rancor_hammer", weight = 5000000},
-		{itemTemplate = "rancor_t21", weight = 5000000}
+		{itemTemplate = "rancor_hammer", weight = 4000000},
+		{itemTemplate = "rancor_t21", weight = 4000000},
+		{itemTemplate = "rifle_t27", weight = 2000000}
 	}
 }
 

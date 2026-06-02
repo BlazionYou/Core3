@@ -1110,7 +1110,14 @@ object_weapon_ranged_rifle_shared_rifle_t21 = SharedWeaponObjectTemplate:new {
 ]]
 }
 
-ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_t21, "object/weapon/ranged/rifle/shared_rifle_t21.iff")
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_t27, "object/weapon/ranged/rifle/shared_rifle_t21.iff")
+
+object_weapon_ranged_rifle_shared_rifle_t27 = SharedWeaponObjectTemplate:new {
+	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_t21.iff"
+	-- Reuses T21 client IFF (Lua wrapper pattern)
+}
+
+ObjectTemplates:addClientTemplate(object_weapon_ranged_rifle_shared_rifle_t27, "object/weapon/ranged/rifle/shared_rifle_t21.iff")
 
 object_weapon_ranged_rifle_shared_rifle_tenloss_dxr6_disruptor_loot = SharedWeaponObjectTemplate:new {
 	clientTemplateFileName = "object/weapon/ranged/rifle/shared_rifle_tenloss_dxr6_disruptor_loot.iff"
