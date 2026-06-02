@@ -269,16 +269,12 @@ void DroidObjectImplementation::initDroidModules() {
 			auto combatModule = new DroidCombatModuleDataComponent();
 			combatModule->setSpecies(getSpecies());
 			modules.emplace(combatModule);
-			combatModule->initialize(this);
+			combatModule->initialize(_this.getReferenceUnsafeStaticCast());
 		}
 
 		if (!hasStimpack) {
 			auto stimpackModule = new DroidStimpackModuleDataComponent();
-			stimpackModule->capacity = 500;
-			stimpackModule->speed = 5;
-			stimpackModule->rate = 12000;
 			modules.emplace(stimpackModule);
-			stimpackModule->initialize(this);
 		}
 
 		if (!hasAutoRepair) {
@@ -294,13 +290,13 @@ void DroidObjectImplementation::initDroidModules() {
 		if (!hasArmor) {
 			auto armorModule = new DroidArmorModuleDataComponent();
 			modules.emplace(armorModule);
-			armorModule->initialize(this);
+			armorModule->initialize(_this.getReferenceUnsafeStaticCast());
 		}
 
 		if (!hasStorage) {
 			auto storageModule = new DroidItemStorageModuleDataComponent();
 			modules.emplace(storageModule);
-			storageModule->initialize(this);
+			storageModule->initialize(_this.getReferenceUnsafeStaticCast());
 		}
 	}
 }
