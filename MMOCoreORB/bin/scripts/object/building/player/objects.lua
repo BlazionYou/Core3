@@ -2260,3 +2260,12 @@ object_building_player_shared_player_merchant_tent_style_03 = SharedBuildingObje
 }
 
 ObjectTemplates:addClientTemplate(object_building_player_shared_player_merchant_tent_style_03, "object/building/player/shared_player_merchant_tent_style_03.iff")
+
+
+
+object_building_player_shared_player_house_dathomir_small_style_01 = SharedBuildingObjectTemplate:new {
+	clientTemplateFileName = "object/building/player/shared_player_house_generic_small_style_01.iff"
+	structureFootprintFileName = "footprint/building/player/shared_player_house_generic_small_style_01.sfp"
+}
+ObjectTemplates:addClientTemplate(object_building_player_shared_player_house_dathomir_small_style_01, "object/building/player/shared_player_house_dathomir_small_style_01.iff")
+

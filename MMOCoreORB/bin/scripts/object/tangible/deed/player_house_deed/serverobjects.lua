@@ -1,4 +1,4 @@
---Copyright (C) 2010 <SWGEmu>
+﻿--Copyright (C) 2010 <SWGEmu>
 
 
 --This File is part of Core3.
@@ -73,3 +73,5 @@ includeFile("tangible/deed/player_house_deed/tatooine_house_large_deed.lua")
 includeFile("tangible/deed/player_house_deed/tatooine_house_medium_deed.lua")
 includeFile("tangible/deed/player_house_deed/tatooine_house_small_deed.lua")
 includeFile("tangible/deed/player_house_deed/tatooine_house_small_style_02_deed.lua")
+
+includeFile("tangible/deed/player_house_deed/dathomir_house_small_deed.lua")
