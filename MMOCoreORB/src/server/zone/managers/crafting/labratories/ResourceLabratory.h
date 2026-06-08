@@ -9,6 +9,10 @@
 #define RESOURCELABRATORY_H_
 
 #include "SharedLabratory.h"
+
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
+#include "server/zone/objects/manufactureschematic/ingredientslots/ComponentSlot.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -27,6 +31,7 @@ protected:
 	SortedVector<String> bioMods;
 	bool applyComponentStats(TangibleObject* prototype, ManufactureSchematic* manufactureSchematic);
 	String checkBioSkillMods(const String& property);
+	void applyKineticSaberInheritance(TangibleObject* prototype, ManufactureSchematic* manufactureSchematic);
 };
 
 }

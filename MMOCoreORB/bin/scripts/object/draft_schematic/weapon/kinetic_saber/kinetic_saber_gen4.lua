@@ -1,6 +1,5 @@
 --Copyright (C) 2010 <SWGEmu>
 
-
 --This File is part of Core3.
 
 --This program is free software; you can redistribute 
@@ -38,38 +37,41 @@
 --to grant this special exception for their modified versions; 
 --it is their choice whether to do so. The GNU Lesser General Public License 
 --gives permission to release a modified version without this exception; 
---this exception also makes it possible to release a modified version 
+--this exception also makes it possible to release a modified version
 
 
+object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4 = object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen4:new {
 
---Children folder includes
-includeFile("weapon/melee/sword/base/serverobjects.lua")
-includeFile("weapon/melee/sword/crafted_saber/serverobjects.lua")
-includeFile("weapon/melee/sword/kinetic_saber/serverobjects.lua")
+   templateType = DRAFTSCHEMATIC,
 
--- Server Objects
-includeFile("weapon/melee/sword/bestine_quest_sword.lua")
-includeFile("weapon/melee/sword/sword_01.lua")
-includeFile("weapon/melee/sword/sword_01_ranged.lua")
-includeFile("weapon/melee/sword/sword_01_noob.lua")
-includeFile("weapon/melee/sword/sword_02.lua")
-includeFile("weapon/melee/sword/sword_02_ranged.lua")
-includeFile("weapon/melee/sword/sword_blade_ryyk.lua")
-includeFile("weapon/melee/sword/sword_curved_nyax.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_anakin.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_andael.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_ben.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_dugald.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_leather.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_luke.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_luke_2h_test.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_mace.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_nebu.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_obi.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_quigon.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_sleekblack.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_sleeksilver.lua")
-includeFile("weapon/melee/sword/sword_lightsaber_vader.lua")
-includeFile("weapon/melee/sword/sword_nyax.lua")
-includeFile("weapon/melee/sword/sword_nyax_ranged.lua")
-includeFile("weapon/melee/sword/sword_rantok.lua")
+   customObjectName = "Fourth Generation Kinetic Saber",
+
+   craftingToolTab = 1,
+   complexity = 19, 
+   size = 1, 
+   factoryCrateType = "object/factory/factory_crate_weapon.iff",
+   
+   xpType = "crafting_weapons_general", 
+   xp = 1000, 
+
+   assemblySkill = "weapon_assembly", 
+   experimentingSkill = "weapon_experimentation", 
+   customizationSkill = "weapon_customization", 
+   factoryCrateSize = 0,
+
+   customizationOptions = {},
+   customizationStringNames = {},
+   customizationDefaults = {},
+
+   ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
+   ingredientTitleNames = {"frame_assembly", "previous_gen_saber", "activator_coil", "handgrip", "crystal_array", "power_field_insulator", "energizers"},
+   ingredientSlotType = {0, 1, 0, 0, 1, 0, 0},
+   resourceTypes = {"steel_duralloy", "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen3.iff", "aluminum_titanium", "petrochem_inert_polymer", "object/tangible/component/weapon/lightsaber/shared_lightsaber_module_force_crystal.iff", "gas_inert_culsion", "copper_polysteel"},
+   resourceQuantities = {40, 1, 22, 28, 1, 28, 28},
+   contribution = {100, 100, 100, 100, 100, 100, 100},
+
+   targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen4.iff",
+
+   additionalTemplates = {}
+}
+ObjectTemplates:addTemplate(object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4, "object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen4.iff")

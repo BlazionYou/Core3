@@ -9,6 +9,7 @@
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 #include "server/zone/objects/tangible/component/Component.h"
 #include "server/zone/objects/manufactureschematic/ingredientslots/ComponentSlot.h"
+#include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 //#define DEBUG_RESOURCE_LAB
 
@@ -106,6 +107,8 @@ void ResourceLabratory::setInitialCraftingValues(TangibleObject* prototype, Manu
 #endif // DEBUG_RESOURCE_LAB
 		craftingValues->recalculateValues(true);
 	}
+
+	applyKineticSaberInheritance(prototype, manufactureSchematic);
 
 	if(draftSchematic->getIsMagic()) {
 		prototype->setIsCraftedEnhancedItem(true);
@@ -381,4 +384,106 @@ String ResourceLabratory::checkBioSkillMods(const String& property) {
 	}
 
 	return "";
+}
+
+void ResourceLabratory::applyKineticSaberInheritance(TangibleObject* prototype, ManufactureSchematic* manufactureSchematic) {
+	if (manufactureSchematic == nullptr || manufactureSchematic->getDraftSchematic() == nullptr)
+		return;
+
+	if (manufactureSchematic->getSlotCount() <= 1)
+		return;
+
+	// Check if slot[1] is a ComponentSlot containing a WeaponObject
+	// This naturally identifies gen1+ kinetic sabers.
+	// Training has no weapon in slot[1] (it has a crystal), so it's skipped.
+	Reference<IngredientSlot*> prevSlot = manufactureSchematic->getSlot(1);
+	if (prevSlot == nullptr || !prevSlot->isComponentSlot() || !prevSlot->isFull())
+		return;
+
+	ComponentSlot* compSlot = cast<ComponentSlot*>(prevSlot.get());
+	if (compSlot == nullptr)
+		return;
+
+	ManagedReference<TangibleObject*> prevTano = compSlot->getPrototype();
+	if (prevTano == nullptr || !prevTano->isWeaponObject())
+		return;
+
+	WeaponObject* prevWeapon = cast<WeaponObject*>(prevTano.get());
+	CraftingValues* prevCV = prevWeapon->getCraftingValues();
+	CraftingValues* cv = manufactureSchematic->getCraftingValues();
+
+	if (prevCV == nullptr || cv == nullptr)
+		return;
+
+	// Read previous-gen stats
+	float prevMinDmg = prevCV->getCurrentValue("mindamage");
+	float prevMaxDmg = prevCV->getCurrentValue("maxdamage");
+	float prevSpeed = prevCV->getCurrentValue("attackspeed");
+	float prevWound = prevCV->getCurrentValue("woundchance");
+	float prevForce = prevCV->getCurrentValue("forcecost");
+	float prevHP = prevCV->getCurrentValue("attackhealthcost");
+	float prevAP = prevCV->getCurrentValue("attackactioncost");
+	float prevMP = prevCV->getCurrentValue("attackmindcost");
+
+	// Read crystal contributions (already added by applyComponentStats)
+	float crystalMinDmg = cv->getCurrentValue("mindamage");
+	float crystalMaxDmg = cv->getCurrentValue("maxdamage");
+
+	// Calculate new stats: previous gen + crystal
+	float newMinDmg = prevMinDmg + crystalMinDmg;
+	float newMaxDmg = prevMaxDmg + crystalMaxDmg;
+	float newSpeed = prevSpeed;
+	float newWound = prevWound;
+	float newForce = prevForce;
+	float newHP = prevHP;
+	float newAP = prevAP;
+	float newMP = prevMP;
+
+	// Write to CraftingValues (lock min=max=current so experimentation can't override)
+	cv->setCurrentValue("mindamage", newMinDmg);
+	cv->setMinValue("mindamage", newMinDmg);
+	cv->setMaxValue("mindamage", newMinDmg);
+
+	cv->setCurrentValue("maxdamage", newMaxDmg);
+	cv->setMinValue("maxdamage", newMaxDmg);
+	cv->setMaxValue("maxdamage", newMaxDmg);
+
+	cv->setCurrentValue("attackspeed", newSpeed);
+	cv->setMinValue("attackspeed", newSpeed);
+	cv->setMaxValue("attackspeed", newSpeed);
+
+	cv->setCurrentValue("woundchance", newWound);
+	cv->setMinValue("woundchance", newWound);
+	cv->setMaxValue("woundchance", newWound);
+
+	cv->setCurrentValue("forcecost", newForce);
+	cv->setMinValue("forcecost", newForce);
+	cv->setMaxValue("forcecost", newForce);
+
+	cv->setCurrentValue("attackhealthcost", newHP);
+	cv->setMinValue("attackhealthcost", newHP);
+	cv->setMaxValue("attackhealthcost", newHP);
+
+	cv->setCurrentValue("attackactioncost", newAP);
+	cv->setMinValue("attackactioncost", newAP);
+	cv->setMaxValue("attackactioncost", newAP);
+
+	cv->setCurrentValue("attackmindcost", newMP);
+	cv->setMinValue("attackmindcost", newMP);
+	cv->setMaxValue("attackmindcost", newMP);
+
+	// Apply to WeaponObject directly
+	WeaponObject* weapon = cast<WeaponObject*>(prototype);
+	if (weapon != nullptr) {
+		weapon->setMinDamage(newMinDmg);
+		weapon->setMaxDamage(newMaxDmg);
+		weapon->setAttackSpeed(newSpeed);
+		weapon->setWoundsRatio(newWound);
+		weapon->setForceCost(newForce);
+		weapon->setHealthAttackCost((int)newHP);
+		weapon->setActionAttackCost((int)newAP);
+		weapon->setMindAttackCost((int)newMP);
+	}
+
+	cv->recalculateValues(true);
 }

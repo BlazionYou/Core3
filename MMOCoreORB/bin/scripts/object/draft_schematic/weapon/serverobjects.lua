@@ -45,6 +45,7 @@
 --Children folder includes
 includeFile("draft_schematic/weapon/component/serverobjects.lua")
 includeFile("draft_schematic/weapon/lightsaber/serverobjects.lua")
+includeFile("draft_schematic/weapon/kinetic_saber/serverobjects.lua")
 
 -- Server Objects
 includeFile("draft_schematic/weapon/2h_sword_scythe.lua")

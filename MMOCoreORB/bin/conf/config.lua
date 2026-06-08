@@ -149,6 +149,7 @@ Core3 = {
 	------TRE config------
 	TrePath = "/home/abc3/workspace/tre",
 	TreFiles = {
+		"pre9sabers.tre",
 		"default_patch.tre",
 		"patch_sku1_14_00.tre",
 		"patch_14_00.tre",
