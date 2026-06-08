@@ -409,21 +409,21 @@ void ResourceLabratory::applyKineticSaberInheritance(TangibleObject* prototype, 
 		return;
 
 	WeaponObject* prevWeapon = cast<WeaponObject*>(prevTano.get());
-	CraftingValues* prevCV = prevWeapon->getCraftingValues();
 	CraftingValues* cv = manufactureSchematic->getCraftingValues();
 
-	if (prevCV == nullptr || cv == nullptr)
+	if (cv == nullptr)
 		return;
 
-	// Read previous-gen stats
-	float prevMinDmg = prevCV->getCurrentValue("mindamage");
-	float prevMaxDmg = prevCV->getCurrentValue("maxdamage");
-	float prevSpeed = prevCV->getCurrentValue("attackspeed");
-	float prevWound = prevCV->getCurrentValue("woundchance");
-	float prevForce = prevCV->getCurrentValue("forcecost");
-	float prevHP = prevCV->getCurrentValue("attackhealthcost");
-	float prevAP = prevCV->getCurrentValue("attackactioncost");
-	float prevMP = prevCV->getCurrentValue("attackmindcost");
+	// Read previous-gen stats directly from WeaponObject getters
+	// WeaponObject does NOT have getCraftingValues(), so we use its stat getters
+	float prevMinDmg = prevWeapon->getMinDamage();
+	float prevMaxDmg = prevWeapon->getMaxDamage();
+	float prevSpeed = prevWeapon->getAttackSpeed();
+	float prevWound = prevWeapon->getWoundsRatio();
+	float prevForce = prevWeapon->getForceCost();
+	float prevHP = (float)prevWeapon->getHealthAttackCost();
+	float prevAP = (float)prevWeapon->getActionAttackCost();
+	float prevMP = (float)prevWeapon->getMindAttackCost();
 
 	// Read crystal contributions (already added by applyComponentStats)
 	float crystalMinDmg = cv->getCurrentValue("mindamage");
