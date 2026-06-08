@@ -1,41 +1,41 @@
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_training = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_training.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_training.iff",
 	clientObjectCRC = 0x9284E4EE
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_training, "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_training.iff")
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen1 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen1.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen1.iff",
 	clientObjectCRC = 0x78AB3F06
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen1, "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen1.iff")
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen2 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen2.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen2.iff",
 	clientObjectCRC = 0xA3BC9791
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen2, "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen2.iff")
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen3 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen3.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen3.iff",
 	clientObjectCRC = 0xEAB1F01C
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen3, "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen3.iff")
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen4 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen4.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen4.iff",
 	clientObjectCRC = 0x1152DB08
 }
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen4, "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen4.iff")
 
 object_draft_schematic_weapon_kinetic_saber_shared_kinetic_saber_gen5 = SharedDraftSchematicObjectTemplate:new {
-	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen5.iff"
+	clientTemplateFileName = "object/draft_schematic/weapon/kinetic_saber/shared_kinetic_saber_gen5.iff",
 	clientObjectCRC = 0x585FBC85
 }
 
