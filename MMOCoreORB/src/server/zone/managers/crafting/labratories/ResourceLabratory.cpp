@@ -393,10 +393,12 @@ void ResourceLabratory::applyKineticSaberInheritance(TangibleObject* prototype, 
 	if (manufactureSchematic->getSlotCount() <= 1)
 		return;
 
-	// Check if slot[1] is a ComponentSlot containing a WeaponObject
+	// Check if slot[5] is a ComponentSlot containing a WeaponObject
 	// This naturally identifies gen1+ kinetic sabers.
-	// Training has no weapon in slot[1] (it has a crystal), so it's skipped.
-	Reference<IngredientSlot*> prevSlot = manufactureSchematic->getSlot(1);
+	// Training has no weapon in slot[5] (it has a resource), so it's skipped.
+	// SDSC slot order: 0:emitter_shroud 1:primary_crystal 2:activator 3:handgrip
+	//                  4:focusing_crystals 5:previous_gen_saber 6:energizers
+	Reference<IngredientSlot*> prevSlot = manufactureSchematic->getSlot(5);
 	if (prevSlot == nullptr || !prevSlot->isComponentSlot() || !prevSlot->isFull())
 		return;
 

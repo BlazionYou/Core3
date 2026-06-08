@@ -23,10 +23,14 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen2 = object_draft_sc
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
-   ingredientTitleNames = {"frame_assembly", "previous_gen_saber", "activator_coil", "handgrip", "crystal_array", "power_field_insulator", "energizers"},
-   ingredientSlotType = {0, 1, 0, 0, 1, 0, 0},
-   resourceTypes = {"metal", "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen1.iff", "metal_nonferrous", "petrochem_inert", "object/tangible/component/weapon/lightsaber/shared_lightsaber_module_force_crystal.iff", "gas_inert_known", "metal_nonferrous"},
-   resourceQuantities = {25, 1, 18, 20, 1, 22, 20},
+   -- IFF slot order (must match shared_kinetic_saber_genN.iff):
+   --   0:emitter_shroud 1:primary_crystal 2:activator 3:handgrip
+   --   4:focusing_crystals 5:previous_gen_saber 6:energizers
+   -- Type 1 = ComponentSlot (accepts the previous-gen weapon at index 5)
+   ingredientTitleNames = {"frame_assembly", "primary_crystal", "activator", "handgrip", "focusing_crystals", "previous_gen_saber", "energizers"},
+   ingredientSlotType = {0, 0, 0, 0, 0, 1, 0},
+   resourceTypes = {"metal", "mineral", "metal_nonferrous", "petrochem_inert", "object/tangible/component/weapon/lightsaber/shared_lightsaber_module_force_crystal.iff", "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen1.iff", "metal_nonferrous"},
+   resourceQuantities = {25, 1, 18, 20, 1, 1, 20},
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
    targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen2.iff",
