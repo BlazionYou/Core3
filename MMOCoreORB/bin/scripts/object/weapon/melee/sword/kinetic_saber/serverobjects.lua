@@ -39,6 +39,9 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version
 
+--Children folder includes
+includeFile("weapon/melee/sword/kinetic_saber/objects.lua")
+
 -- Server Objects
 includeFile("weapon/melee/sword/kinetic_saber/sword_kinetic_saber_training.lua")
 includeFile("weapon/melee/sword/kinetic_saber/sword_kinetic_saber_gen1.lua")
