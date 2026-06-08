@@ -5,7 +5,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4 = object_draft_sc
 
    customObjectName = "Fourth Generation Kinetic Saber",
 
-   craftingToolTab = 1,
+   craftingToolTab = 2048,
    complexity = 19, 
    size = 1, 
    factoryCrateType = "object/factory/factory_crate_weapon.iff",

@@ -5,7 +5,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_training = object_draf
 
    customObjectName = "A Training Kinetic Saber",
 
-   craftingToolTab = 1, -- weaponsmith tab
+   craftingToolTab = 2048, -- weaponsmith tab
    complexity = 16, 
    size = 1, 
    factoryCrateType = "object/factory/factory_crate_weapon.iff",
