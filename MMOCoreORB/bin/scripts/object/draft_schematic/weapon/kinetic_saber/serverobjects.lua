@@ -1,4 +1,5 @@
 
+includeFile("draft_schematic/weapon/kinetic_saber/objects.lua")
 includeFile("draft_schematic/weapon/kinetic_saber/kinetic_saber_training.lua")
 includeFile("draft_schematic/weapon/kinetic_saber/kinetic_saber_gen1.lua")
 includeFile("draft_schematic/weapon/kinetic_saber/kinetic_saber_gen2.lua")
