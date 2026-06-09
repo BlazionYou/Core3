@@ -23,7 +23,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen1 = object_draft_sc
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
-      -- IFF slot order (must match shared_kinetic_saber_genN.iff):
+   -- IFF slot order (must match shared_kinetic_saber_genN.iff):
    --   0:emitter_shroud 1:primary_crystal 2:activator 3:handgrip
    --   4:focusing_crystals 5:previous_gen_saber 6:energizers
    -- Type 1 = ComponentSlot (accepts the previous-gen weapon at index 5)

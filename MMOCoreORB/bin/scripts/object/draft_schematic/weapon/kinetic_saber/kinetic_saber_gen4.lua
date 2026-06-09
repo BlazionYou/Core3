@@ -3,7 +3,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4 = object_draft_sc
 
    templateType = DRAFTSCHEMATIC,
 
-   customObjectName = "Fourth Generation Lightsaber",
+   customObjectName = "Fourth Generation Kinetic Lightsaber",
 
    craftingToolTab = 2048, -- (See DraftSchematicObjectTemplate.h)
    complexity = 19, 
@@ -23,6 +23,10 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4 = object_draft_sc
    customizationDefaults = {},
 
    ingredientTemplateNames = {"craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n", "craft_weapon_ingredients_n"},
+   -- IFF slot order (must match shared_kinetic_saber_genN.iff):
+   --   0:emitter_shroud 1:primary_crystal 2:activator 3:handgrip
+   --   4:focusing_crystals 5:previous_gen_saber 6:energizers
+   -- Type 1 = ComponentSlot (accepts the previous-gen weapon at index 5)
    ingredientTitleNames = {"emitter_shroud", "primary_crystal", "activator", "handgrip", "focusing_crystals", "power_field_insulator", "energizers"},
    ingredientSlotType = {0, 1, 0, 0, 1, 0, 0},
    resourceTypes = {"steel_duralloy", "object/tangible/component/weapon/lightsaber/shared_lightsaber_refined_crystal_pack.iff", "aluminum_titanium", "petrochem_inert_polymer", "object/tangible/component/weapon/lightsaber/shared_lightsaber_refined_crystal_pack.iff", "gas_inert_culsion", "copper_polysteel"},
