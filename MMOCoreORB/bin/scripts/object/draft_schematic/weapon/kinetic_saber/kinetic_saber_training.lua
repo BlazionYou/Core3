@@ -32,7 +32,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_training = object_draf
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
 
-   targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_training.iff",
+   targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_sword_kinetic_saber_training.iff",
 
    additionalTemplates = {}
 

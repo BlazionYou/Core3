@@ -117,4 +117,4 @@ object_weapon_melee_sword_kinetic_saber_sword_kinetic_saber_gen3 = object_weapon
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 }
 
-ObjectTemplates:addTemplate(object_weapon_melee_sword_kinetic_saber_sword_kinetic_saber_gen3, "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen3.iff")
+ObjectTemplates:addTemplate(object_weapon_melee_sword_kinetic_saber_sword_kinetic_saber_gen3, "object/weapon/melee/sword/kinetic_saber/shared_sword_kinetic_saber_gen3.iff")

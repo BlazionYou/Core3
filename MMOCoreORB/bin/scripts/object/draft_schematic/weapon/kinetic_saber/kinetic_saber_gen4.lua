@@ -29,11 +29,11 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen4 = object_draft_sc
    -- Type 1 = ComponentSlot (accepts the previous-gen weapon at index 5)
    ingredientTitleNames = {"frame_assembly", "primary_crystal", "activator", "handgrip", "focusing_crystals", "previous_gen_saber", "energizers"},
    ingredientSlotType = {0, 0, 0, 0, 0, 1, 0},
-   resourceTypes = {"steel_duralloy", "mineral", "aluminum_titanium", "petrochem_inert_polymer", "object/tangible/component/weapon/lightsaber/shared_lightsaber_module_force_crystal.iff", "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen3.iff", "copper_polysteel"},
+   resourceTypes = {"steel_duralloy", "mineral", "aluminum_titanium", "petrochem_inert_polymer", "object/tangible/component/weapon/lightsaber/shared_lightsaber_module_force_crystal.iff", "object/weapon/melee/sword/kinetic_saber/shared_sword_kinetic_saber_gen3.iff", "copper_polysteel"},
    resourceQuantities = {40, 1, 22, 28, 1, 1, 28},
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
-   targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_kinetic_saber_gen4.iff",
+   targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_sword_kinetic_saber_gen4.iff",
 
    additionalTemplates = {}
 }
