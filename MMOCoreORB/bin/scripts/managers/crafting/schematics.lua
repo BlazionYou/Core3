@@ -1824,4 +1824,10 @@ schematics = {
 	{path="object/draft_schematic/item/theme_park/alderaan/act2/dead_eye_decoder.iff"},
 	{path="object/draft_schematic/item/theme_park/alderaan/act3/dead_eye_prototype.iff"},
 	{path="object/draft_schematic/item/quest_item/fs_medic_puzzle_heal_pack.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_training.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen1.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen2.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen3.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen4.iff"},
+	{path="object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen5.iff"},
 };
