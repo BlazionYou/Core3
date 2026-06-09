@@ -36,6 +36,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen5 = object_draft_sc
    targetTemplate = "object/weapon/melee/sword/kinetic_saber/shared_sword_kinetic_saber_gen5.iff",
 
    additionalTemplates = {}
+   
 }
 
 ObjectTemplates:addTemplate(object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen5, "object/draft_schematic/weapon/kinetic_saber/kinetic_saber_gen5.iff")
