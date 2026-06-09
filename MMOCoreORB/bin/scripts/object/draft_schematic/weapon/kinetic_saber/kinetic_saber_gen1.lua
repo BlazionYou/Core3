@@ -33,7 +33,7 @@ object_draft_schematic_weapon_kinetic_saber_kinetic_saber_gen1 = object_draft_sc
    resourceQuantities = {15, 1, 14, 17, 1, 20, 14},
    contribution = {100, 100, 100, 100, 100, 100, 100},
 
-   targetTemplate = "object/weapon/melee/sword/kinetic_saber/kinetic_saber_gen1.iff",
+   targetTemplate = "object/weapon/melee/sword/kinetic_saber/sword_kinetic_saber_gen1.iff",
 
    additionalTemplates = {}
 
