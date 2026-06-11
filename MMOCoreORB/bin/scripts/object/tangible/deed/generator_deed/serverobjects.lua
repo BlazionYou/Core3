@@ -46,6 +46,7 @@
 
 -- Server Objects
 includeFile("tangible/deed/generator_deed/generator_fusion_deed.lua")
+includeFile("tangible/deed/generator_deed/generator_fusion_heavy_deed.lua")
 includeFile("tangible/deed/generator_deed/generator_photo_bio_deed.lua")
 includeFile("tangible/deed/generator_deed/generator_solar_deed.lua")
 includeFile("tangible/deed/generator_deed/generator_wind_deed.lua")

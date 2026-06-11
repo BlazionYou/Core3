@@ -1364,6 +1364,12 @@ object_draft_schematic_structure_shared_installation_factory_weapon = SharedDraf
 
 ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_factory_weapon, "object/draft_schematic/structure/shared_installation_factory_weapon.iff")
 
+object_draft_schematic_structure_shared_installation_generator_fusion_heavy = SharedDraftSchematicObjectTemplate:new {
+	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_generator_fusion.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_draft_schematic_structure_shared_installation_generator_fusion_heavy, "object/draft_schematic/structure/shared_installation_generator_fusion.iff")
+
 object_draft_schematic_structure_shared_installation_generator_fusion = SharedDraftSchematicObjectTemplate:new {
 	clientTemplateFileName = "object/draft_schematic/structure/shared_installation_generator_fusion.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups

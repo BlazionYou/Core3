@@ -100,6 +100,13 @@ object_tangible_deed_generator_deed_shared_generator_fusion_deed = SharedTangibl
 
 ObjectTemplates:addClientTemplate(object_tangible_deed_generator_deed_shared_generator_fusion_deed, "object/tangible/deed/generator_deed/shared_generator_fusion_deed.iff")
 
+object_tangible_deed_generator_deed_shared_generator_fusion_heavy_deed = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/deed/generator_deed/shared_generator_fusion_deed.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_deed_generator_deed_shared_generator_fusion_heavy_deed, "object/tangible/deed/generator_deed/shared_generator_fusion_deed.iff")
+
+
 object_tangible_deed_generator_deed_shared_generator_photo_bio_deed = SharedTangibleObjectTemplate:new {
 	clientTemplateFileName = "object/tangible/deed/generator_deed/shared_generator_photo_bio_deed.iff"
 	--Data below here is deprecated and loaded from the tres, keeping for easy lookups
